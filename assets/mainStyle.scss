@@ -1,0 +1,454 @@
+@font-face {
+  font-family: font_R;
+  src: url(red-hat-display.ttf);
+}
+
+@font-face {
+  font-family: font_M;
+  src: url(red-hat-display-medium.ttf);
+}
+
+@font-face {
+  font-family: font_B;
+  src: url(red-hat-display-bold.ttf);
+}
+
+@font-face {
+  font-family: font_BL;
+  src: url(red-hat-display-black.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  // color: #303030;
+  // color: #555555;
+
+  // user-select: none;
+  // /* supported by Chrome and Opera */
+  // -webkit-user-select: none;
+  // /* Safari */
+  // -khtml-user-select: none;
+  // /* Konqueror HTML */
+  // -moz-user-select: none;
+  // /* Firefox */
+  // -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  font-family: font_R;
+  outline-width: 0;
+  outline-style: none;
+  border: 0px;
+}
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background: #261C2C;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
+}
+
+$BG1: #261C2C; // divs inside work exp, etc.
+$BG2: #584153; // sidebar and work exp div
+$BG3: #7D1935; 
+$BG4: #F999B7; // work exp div highlight & top icons
+$BG5: #3c7bb3;
+$BG6: #F2789F; // small highlight before work exp
+$BG7: #420516;
+$BG8: #7D1935;
+
+$text1: #FEE3EC;
+$text2: #F6ACC8;
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff0a;
+  // border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff1c;
+}
+
+.main_layout {
+  margin: auto;
+  background: #161B1F;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.side_layout {
+  // border: 1px solid red;
+  max-width: 350px;
+  min-width: 350px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+.side_scroll {
+  width: fit-content;
+  overflow-y: auto;
+  overflow-x: hidden;
+  // border: 1px solid red;
+  height: auto;
+}
+.side_container {
+  background: $BG2;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.side_header, .side_profile {
+  // border: 1px solid red;
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+.side_picture {
+  margin: auto;
+  width: 85px;
+  height: 85px;
+  background: #ffffff57;
+  margin-top: 40px;
+  border-radius: 100px;
+}
+.profile_name, .profile_title, .profile_sub {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+}
+.profile_name {
+  color: $text1;
+  font-size: 13px;
+  font-family: font_B;
+}
+.profile_title {
+  color: $text2;
+  font-size: 12px;
+  font-family: font_M;
+}
+.profile_sub {
+  color: $text2;
+  font-size: 11px;
+  font-family: font_R;
+}
+.side_panel {
+  // border-top: 1px solid $BG3;
+  width: auto;
+  height: fit-content;
+  // border: 1px solid red;
+  padding: 15px;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-top: 0;
+}
+.display_B {
+  display: block;
+}
+.text_title {
+  font-size: 13px;
+  font-family: font_B;
+  color: $text1;
+  margin-bottom: 15px;
+}
+.text_title2 {
+  font-size: 11px;
+  font-family: font_M;
+  color: $text1;
+  // margin-bottom: 15px;
+}
+.text_sub {
+  margin-top: 5px;
+  margin-left: 15px;
+  color: $text2;
+  font-size: 12px;
+  font-family: font_M;
+  line-height: 1.8;
+}
+.text_sub svg {
+  height: 12px;
+}
+.skill_set {
+  width: 100%;
+  height: fit-content;
+  margin-top: 20px;
+}
+.prog_bar {
+  width: 100%;
+  height: 5px;
+  background: $BG1;
+  border-radius: 100px;
+  margin-top: 8px;
+}
+.prog {
+  height: 4px;
+  background: $BG4;
+  border-radius: 100px;
+}
+.scroller {
+  width: auto;
+  max-height: 280px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.content_layout {
+  // border: 1px solid red;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 25px;
+  padding-right: 25px;
+  padding-left: 0px;
+  padding-top: 0px;
+}
+// HEADER
+.main_header {
+  // background: $BG2;
+  background: #ffffff57;
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+}
+.header_d {
+  padding: 50px 60px;
+  width: 100%;
+  height: fit-content;
+  // text-shadow: 2px 2px 30px #000000, 2px 2px 30px #000000;
+}
+.cover_title {
+  font-size: 40px;
+  font-family: font_B;
+  color: $text1;
+  line-height: 1;
+  display: block;
+}
+.cover_sub {
+  display: block;
+  font-size: 15px;
+  font-family: font_R;
+  color: $text1;
+}
+.main_container {
+  padding-top: 25px;
+  padding-bottom: 300px;
+  overflow: hidden;
+}
+.navigations {
+  width: 100%;
+  height: fit-content;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.nav_butn {
+  font-size: 13px;
+  background-color: $BG2;
+  color: $text1;
+  // font-weight: bold;
+  transition: 0.4s;
+  &:hover {
+    transition: 0.4s;
+    background-color: $BG3;
+  }
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 7px;
+}
+.nav_butn svg {
+  height: 13px;
+  color: $BG4;
+}
+.panel_container {
+  background-color: $BG2;
+  color: $text1;
+  width: 100%;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  transition: 0.4s;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+}
+.extra_border {
+  transition: 0.4s;
+  border-left: 7px solid $BG4;
+  border-right: 7px solid $BG4;
+}
+.panel_title {
+  display: block;
+  font-family: font_R;
+  font-size: 15px;
+  transition: 0.4s;
+  border-left: 3px solid transparent;
+  padding-left: 15px;
+  margin-left: 10px;
+  // width: fit-content;
+}
+.extra_color {
+  border-left: 3px solid $BG6;
+  font-weight: bold;
+  // background-image: linear-gradient(48deg, #ffffff5f, transparent);
+}
+.panel_title svg {
+  height: 15px;
+  color: $BG4;
+}
+.panel_content {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 10px;
+  margin-top: 15px;
+  padding: 20px;
+  width: 45%;
+  background: $BG1;
+  border-radius: 10px;
+  display: inline-block;
+  vertical-align: top;
+  height: fit-content;
+}
+.content_title {
+  font-family: font_BL;
+  color: $text2;
+  font-size: 14px;
+  display: block;
+  margin-top: 7px;
+  transition: 0.4s;
+}
+.content_sub {
+  margin-top: 7px;
+  font-family: font_M;
+  font-size: 13px;
+  display: block;
+}
+.content_note {
+  margin-top: 7px;
+  font-family: font_R;
+  font-size: 12px;
+  color: $text2;
+  display: block;
+}
+.content_desc {
+  margin-top: 7px;
+  font-family: font_R;
+  font-size: 12px;
+  color: $text1;
+  display: block;
+}
+.content_link {
+  width: 100%;
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.content_link_btn {
+  border: 1px solid $BG3;
+  border-radius: 100px;
+  padding: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: fit-content;
+  color: $text1;
+  font-size: 12px;
+  background: transparent;
+  transition: 0.4s;
+  &:hover {
+    background: $BG3;
+    transition: 0.4s;
+  }
+}
+.content_link_btn svg {
+  height: 12px;
+}
+.goTop {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 10001;
+  width: fit-content;
+  height: fit-content;
+}
+.goTopBtn {
+  background: #c5e4ff1d;
+  color: white;
+  transition: 0.4s;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  &:hover {
+    background: #6cbaff;
+    transition: 0.4s;
+  }
+}
+.goTopBtn svg {
+  height: 20px;
+  align-self: center;
+}
+.main_cont {
+  width: fit-content;
+  height: fit-content;
+  border: 1px solid red;
+}
+.side_bottons {
+  position: fixed;
+  position: fixed;
+  right: 30px;
+  bottom: 80px;
+  z-index: 10001;
+  width: fit-content;
+  height: fit-content;
+  // border: 1px solid red;
+}
+.side_botton {
+  margin-bottom: 15px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  white-space: nowrap;
+  font-size: 13px;
+  transition: 0.3s;
+  color: $BG1;
+  background: $BG3;
+  &:hover {
+    background: $BG8;
+    color: $text1;
+    transition: 0.3s;
+  }
+}
+.extra_sideBtn {
+  background: $BG8;
+  color: $text1;
+  transition: 0.3s;
+}
+.side_botton svg {
+  height: 13px;
+}
