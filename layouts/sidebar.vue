@@ -19,7 +19,9 @@
             <div class="side_panel">
               <div class="display_B text_title"> Contacts:</div>
               <div class="display_B text_sub"> <fa :icon="['fa', 'envelope']"/> &ensp; {{ email }} </div>
-              <div class="display_B text_sub"> <fa :icon="['fa', 'phone-square']"/> &ensp; {{ mobile }} </div>
+              <div class="display_B text_sub"> <fa :icon="['fab', 'linkedin']"/> &ensp;
+                <a href="https://www.linkedin.com/in/kharyl-ortiz-630153136/" style="color: #F6ACC8"> {{ linkedin }} </a>
+              </div>
               <div class="display_B text_sub"> <fa :icon="['fa', 'globe-asia']"/> &ensp; {{ address }} </div>
             </div>
             <!-- SKILLS -->
@@ -59,23 +61,23 @@ data() {
   return {
     final_width: "",
     computedHeight: "",
-    name: "Kharyl Kate Ortiz",
-    title: "UX | Front-End Developer",
+    name: "Kharyl Ortiz",
+    title: "Front-End Developer",
     email: "kharylkate.ortiz@gmail.com",
-    mobile: "(+63) 935-056-6234",
+    linkedin: "Kharyl Ortiz | LinkedIn",
     address: "General Santos City 9500, Mindanao, Philippines",
     skills: [
-      { skill: "Vue, Vuex", lvl: 80 },
-      { skill: "React", lvl: 70 },
-      { skill: "Nativescript-vue ", lvl: 60 },
+      { skill: "Vue, Vuex", lvl: 85 },
       { skill: "Bootstrap, Bootstrap Vue", lvl: 85 },
+      { skill: "React", lvl: 60 },
+      { skill: "HTML, CSS", lvl: 85 },
+      { skill: "Nativescript-vue ", lvl: 60 },
     ],
     knowledge: [
       { skill: "Github / Bitbucket" },
       { skill: "JIRA" },
       { skill: "Axios" },
       { skill: "Jest" },
-      { skill: "MySQL" },
       { skill: "PostgreSQL" },
     ],
     final_height: "",
@@ -125,7 +127,7 @@ computed: {
 
 <style lang="scss">
 .side_picture{
-  background-image: url("../assets/pic2.png");
+  background-image: url("../assets/pic2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

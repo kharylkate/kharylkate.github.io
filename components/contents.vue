@@ -87,17 +87,6 @@ data() {
               {li: "Validating changes by testing programs."},
             ]
           },
-          {
-            title: "Learning Management System Assistant", 
-            sub: "Mindanao State University - GSC", 
-            link: "",
-            note: "January 2020 - May 2020",
-            cont: 
-            [
-              {li: "Assisted in faculty training for Learning Management System."},
-              {li: "Served as coach for digitizing course content and deploying it in the LMS Server of MSU General Santos."}
-            ]
-          },
         ]
       },
       {
@@ -106,36 +95,51 @@ data() {
         icon: "project-diagram",
         contents: [
           {
+            title: "Recruitment Tracking System (RecTrack) V2", 
+            sub: "Secondary UX Designer (Vue, NuxtJS, Vuetify)",
+            note: "Assigned as secondary dev on November 2020 - March 2022",
+            link: "",
+            cont: [
+              {li: "A web-based application designed to track the recruitment process of the company, with user and applicant management, online exam and report generating features."},
+              {li: "Helped in creating, integrating, testing and deploying a new module."},
+              {li: "Active in bug fixing."},
+              {li: "A new and improved version created by an amazing team has been deployed in its place and has been live since March 2022!"},
+            ]
+          },
+          {
             title: "Farmer's Delivery Slip System", 
-            sub: "Primary UX Designer", 
-            note: "Vue, NuxtJS, Bootstrap",
+            sub: "Primary UX Designer (Vue, NuxtJS, Bootstrap)",
+            note: "November 2020 - Present",
             link: "",
             cont: [
               {li: "A web-based application designed to eliminate manual booking of delivery transactions and issuance of delivery slips to farmers."},
-              {li: "This application includes printing of automated delivery slips (through POS printer), FSQR integration and tagging of Purchase Order from SAP."},
-              {li: "Passed on to me for frontend and network printing maintenance."},
+              {li: "This application includes printing of automated delivery slips (through POS printer), FSQR integration and tagging of Purchase Requests from SAP and posting of Purhase Orders to SAP."},
               {li: "Used Axios for API integration."},
+              {li: "Waiting on deployment."},
+              
             ]
           },
           {
             title: "Revive Booking System", 
-            sub: "Primary UX Designer", 
-            note: "React, NextJS, Feather Socket.io, Material UI, Axios, Luxon",
+            sub: "Primary UX Designer (React, NextJS, Feather Socket.io, Material UI, Axios, Luxon)", 
+            note: "Passed on by previous FE Dev on June 2020 - Present",
             link: "",
             cont: [
-              {li: "A web-based application created to ease operations."},
-              {li: " in terms of enrollment of farmers, booking of farm equipments, storing of farmer and farm equipment, and report generation."}
+              {li: "A web-based application created to ease operations in terms of enrollment of farmers, booking of farm equipments, storing of farmer and farm equipment, and report generation."},
+              {li: "Passed on by previous developers for maintenance and development of additional features."},
+              {li: "Added new modules and new features."},
+              {li: "Deployed and actively used in daily operations."}
             ]
           },
           {
-            title: "Company Website", 
-            sub: "UI / UX Designer", 
+            title: "BFI Learning Management System", 
+            sub: "Admin/E-Learning Content Developer", 
+            note: "December 2020 - Present",
             link: "",
-            note: "Wordpress, Yoast SEO",
             cont: [
-              {li: "Used wordpress for this project."},
-              {li: "Created my own wordpress template from scratch."},
-              {li: "Was able to train regarding SEO."},
+              {li: "Web Learning Environment for trainees and clients/users."},
+              {li: "Creates and gathers learning materials for further learning of the team."},
+              {li: "Encodes end-user training materials for End-User Trainings."},
             ]
           },
         ]
@@ -146,14 +150,13 @@ data() {
         icon: "book-open",
         contents: [
           {
-            title: "Notre Dame of Dadiangas University (NDDU)", 
-            sub: "BS Computer Science", 
+            title: "Mindanao State University - General Santos City (MSU-GSC)", 
+            sub: "", 
             link: "",
-            note: "SY: 2015 - 2019",
+            note: "2015 - 2020",
             cont: [
-              {li: "Montagne Scholar"},
-              {li: "Junior Programers Group (Documentation Head)."},
-              {li: "Course Representative."},
+              {li: "Bachelor in Science and Information Technology"},
+              {li: "Major in Database Systems"},
             ]
           }
         ]
@@ -164,32 +167,46 @@ data() {
         icon: "star",
         contents: [
           {
-            title: "Visual Artistry", 
-            sub: "Present", 
+            title: "Learning Management System Assistant (OJT)", 
+            sub: "Mindanao State University - GSC", 
             link: "",
-            note: "Self-taught",
-            cont: [
-              {li: "Able to create colored and black n' white portraits."},
-              {li: "Character designs and sketches."},
-              {li: "Digital and Traditional ways of creating art pieces."}
+            note: "January 2020 - May 2020",
+            cont: 
+            [
+              {li: "Assisted in faculty training for Learning Management System."},
+              {li: "Served as coach for digitizing course content and deploying it in the LMS Server of MSU General Santos."}
             ]
           },
           {
-            title: "Web Résumé and Portfolio", 
-            sub: "Year 2022", 
+            title: "Software Quality Assurance Engineer Training", 
+            sub: "BiotechFarms Inc.", 
             link: "",
-            note: "Vue, Nuxt, SASS, Github, Netlify",
+            note: "July 2020 - August 2020",
             cont: [
-              {li: "I made this very webiste you're looking right now."},
-              {li: "I guess this could count as a part of my portfolio."},
+              {li: "Git commands, git versioning and bitbucket"},
+              {li: "VS Code with git version control and remote repository enabled"},
+              {li: "Jira Project Management, Service Desk and Confluence"},
+              {li: "Software Development Timeline and Standard Operating Procedure review"},
+              {li: "Fundamentals of Quality Assurance and Software Testing"},
+              {li: "Test Scripts creation"},
+              {li: "Manual testing"},
+              {li: "Automated Testing (Puppeteer, Jest)"},
+              {li: "Standby Technical Support during UAT phase"},
             ]
           },
           {
-            title: "SAP Be Visual! Sketching Basics for IT Business, Passer", 
-            sub: "December 2020", 
+            title: "UX Designer Training", 
+            sub: "BiotechFarms Inc.", 
             link: "",
-            note: "Certification",
-            cont: []
+            note: "September 2020-October 2020",
+            cont: [
+              {li: "Data Gathering Training Materials"},
+              {li: "System diagrams (use-case, activity, entity-relationship, heirarchical)"},
+              {li: "Frontend Application development (VueJs, Vuex, Bootstrap, Axios) using mock data"},
+              {li: "Frontend Application Unit Testing using Jest"},
+              {li: "Collaborate with DevOps for Integration of frontend aplication to backend API"},
+              {li: "Mobile Development using NativeScript"},
+            ]
           },
         ]
       },
