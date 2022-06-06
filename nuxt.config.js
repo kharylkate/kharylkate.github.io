@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Kenn - Web Resume',
+    title: 'Kharyl Ortiz - Web Resume',
     htmlAttrs: {
       lang: 'en'
     },
@@ -167,7 +167,12 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    '@nuxtjs/axios'
   ],
+
+  axios: {
+    baseURL: "https://api.github.com/"
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

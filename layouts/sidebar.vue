@@ -7,8 +7,8 @@
         <div class="side_header">
           <div class="side_picture"></div>
           <div class="side_profile">
-            <div class="profile_name">{{ name }}</div>
-            <div class="profile_title">{{ title }}</div>
+            <div class="profile_name">{{ details.name }}</div>
+            <div class="profile_title">{{ details.title }}</div>
           </div>
         </div>
         <!-- SCROLLABLE SIDE -->
@@ -18,11 +18,11 @@
             <!-- CONTACTS -->
             <div class="side_panel">
               <div class="display_B text_title"> Contacts:</div>
-              <div class="display_B text_sub"> <fa :icon="['fa', 'envelope']"/> &ensp; {{ email }} </div>
+              <div class="display_B text_sub"> <fa :icon="['fa', 'envelope']"/> &ensp; {{ details.email }} </div>
               <div class="display_B text_sub"> <fa :icon="['fab', 'linkedin']"/> &ensp;
-                <a href="https://www.linkedin.com/in/kharyl-ortiz-630153136/" style="color: #F6ACC8"> {{ linkedin }} </a>
+                <a href="https://www.linkedin.com/in/kharyl-ortiz-630153136/" style="color: #F6ACC8"> {{ details.linkedin }} </a>
               </div>
-              <div class="display_B text_sub"> <fa :icon="['fa', 'globe-asia']"/> &ensp; {{ address }} </div>
+              <div class="display_B text_sub"> <fa :icon="['fa', 'globe-asia']"/> &ensp; {{ details.address }} </div>
             </div>
             <!-- SKILLS -->
             <div class="side_panel">
@@ -55,73 +55,63 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
-// name: 'IndexPage',
-data() {
-  return {
-    final_width: "",
-    computedHeight: "",
-    name: "Kharyl Ortiz",
-    title: "Front-End Developer",
-    email: "kharylkate.ortiz@gmail.com",
-    linkedin: "Kharyl Ortiz | LinkedIn",
-    address: "General Santos City 9500, Mindanao, Philippines",
-    skills: [
-      { skill: "Vue, Vuex", lvl: 85 },
-      { skill: "Bootstrap, Bootstrap Vue", lvl: 85 },
-      { skill: "React", lvl: 60 },
-      { skill: "HTML, CSS", lvl: 85 },
-      { skill: "Nativescript-vue ", lvl: 60 },
-    ],
-    knowledge: [
-      { skill: "Github / Bitbucket" },
-      { skill: "JIRA" },
-      { skill: "Axios" },
-      { skill: "Jest" },
-      { skill: "PostgreSQL" },
-    ],
-    final_height: "",
-    final_scroll_height: "",
-  }
-},
-methods: {
+  data() {
+    return {
+      final_width: "",
+      computedHeight: "",
+      final_height: "",
+      final_scroll_height: "",
+    }
+  },
+
+  computed: {
+    ...mapGetters({
+      skills: "getSkills",
+      details: "getDetails",
+      knowledge: "getKnowledge"
+    })
+  },
+
+  methods: {
+    
+  },
+  mounted() {
+    // GET MAIN LAYOUT'S HEIGHT
+    var main_layout = parseInt(this.$refs.main_layout.offsetHeight);
+    var main_layout_w = parseInt(this.$refs.main_layout.offsetWidth);
+
+    // GET SIDE CONTAINER'S HEIGHT
+    const side_container_height = this.$refs.side_cont.offsetHeight;
+    var needed_height;
+
+    // FOR CONTENT SCROLL
+    var sh = side_container_height;
+    this.computedHeight = parseInt(sh) + 50; // idk why I had to put 50
+
+    // FOR WIDTH
+    if(main_layout_w > 1300) {
+      this.final_width = 1344;
+    }
+    else {
+      this.final_width = main_layout_w;
+    }
+    if(main_layout < 733) {
+      alert("Redirecting to mobile version");
+      needed_height = parseFloat(side_container_height) * 0.65; // 65 percent
+    }
+    else if(main_layout > 800) {
+      needed_height = parseFloat(side_container_height) * 0.99; // 80 percent
+    }
+    else {
+      needed_height = parseFloat(side_container_height) * 0.70; // 70 percent
+    }
+    this.final_height = parseInt(needed_height);
+
+  },
   
-},
-mounted() {
-  // GET MAIN LAYOUT'S HEIGHT
-  var main_layout = parseInt(this.$refs.main_layout.offsetHeight);
-  var main_layout_w = parseInt(this.$refs.main_layout.offsetWidth);
-
-  // GET SIDE CONTAINER'S HEIGHT
-  const side_container_height = this.$refs.side_cont.offsetHeight;
-  var needed_height;
-
-  // FOR CONTENT SCROLL
-  var sh = side_container_height;
-  this.computedHeight = parseInt(sh) + 50; // idk why I had to put 50
-
-  // FOR WIDTH
-  if(main_layout_w > 1300) {
-    this.final_width = 1344;
-  }
-  else {
-    this.final_width = main_layout_w;
-  }
-  if(main_layout < 733) {
-    alert("Redirecting to mobile version");
-    needed_height = parseFloat(side_container_height) * 0.65; // 65 percent
-  }
-  else if(main_layout > 800) {
-    needed_height = parseFloat(side_container_height) * 0.99; // 80 percent
-  }
-  else {
-    needed_height = parseFloat(side_container_height) * 0.70; // 70 percent
-  }
-  this.final_height = parseInt(needed_height);
-
-},
-computed: {
-}
 }
 </script>
 
