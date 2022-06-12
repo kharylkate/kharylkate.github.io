@@ -65,47 +65,16 @@
 import Header from "./header.vue";
 import { mapGetters } from 'vuex';
 export default {
-components: {
-  Header
-},
-data() {
-  return {
-  }
-},
-methods: {
-  goTop() {
-    // SCROLL TO TOP
-    document.getElementById("main_cont").scrollIntoView({behavior: 'smooth', block: 'start'});
-    // REMOVE ALL EXTRA STYLES
-    for(var c=0; c < this.panels.length; c++) {
-      document.getElementById('pnl_'+this.panels[c].id).classList.remove("extra_color");
-      document.getElementById(this.panels[c].id).classList.remove("extra_border");
-      document.getElementById('btn_'+this.panels[c].id).classList.remove("extra_sideBtn");
+  components: {
+    Header
+  },
+  data() {
+    return {
+      projects: [],
     }
   },
-  go(link) {
-    window.open(`${link}`);
-  },
-  scrollView(refName) {
-    document.getElementById(refName).scrollIntoView({behavior: 'smooth', block: 'center', inline: 'start'});
-    for(var c=0; c < this.panels.length; c++) {
-      if(this.panels[c].id == refName) { // ADD EXTRA CSS FOR EMPHASIS
-        document.getElementById(this.panels[c].id).classList.add("extra_border");
-        document.getElementById('pnl_'+this.panels[c].id).classList.add("extra_color");
-        document.getElementById('btn_'+this.panels[c].id).classList.add("extra_sideBtn");
-      }
-      else { //REMOVE EXTRA CSS IF NOT CLICKED
-        document.getElementById('btn_'+this.panels[c].id).classList.remove("extra_sideBtn");
-        document.getElementById('pnl_'+this.panels[c].id).classList.remove("extra_color");
-        document.getElementById(this.panels[c].id).classList.remove("extra_border");
-      }
-    }
-  },
-  },
-  mounted() {
-
-  },
-  created() {
+  async created() {
+    
   },
   computed: {
     ...mapGetters({
@@ -114,8 +83,66 @@ methods: {
       listProjectLang: "getProjectLang"
     })
   },
+  methods: {
+    goTop() {
+      // SCROLL TO TOP
+      document.getElementById("main_cont").scrollIntoView({behavior: 'smooth', block: 'start'});
+      // REMOVE ALL EXTRA STYLES
+      for(var c=0; c < this.panels.length; c++) {
+        document.getElementById('pnl_'+this.panels[c].id).classList.remove("extra_color");
+        document.getElementById(this.panels[c].id).classList.remove("extra_border");
+        document.getElementById('btn_'+this.panels[c].id).classList.remove("extra_sideBtn");
+      }
+    },
+
+    go(link) {
+      window.open(`${link}`);
+    },
+
+    scrollView(refName) {
+      document.getElementById(refName).scrollIntoView({behavior: 'smooth', block: 'center', inline: 'start'});
+      for(var c=0; c < this.panels.length; c++) {
+        if(this.panels[c].id == refName) { // ADD EXTRA CSS FOR EMPHASIS
+          document.getElementById(this.panels[c].id).classList.add("extra_border");
+          document.getElementById('pnl_'+this.panels[c].id).classList.add("extra_color");
+          document.getElementById('btn_'+this.panels[c].id).classList.add("extra_sideBtn");
+        }
+        else { //REMOVE EXTRA CSS IF NOT CLICKED
+          document.getElementById('btn_'+this.panels[c].id).classList.remove("extra_sideBtn");
+          document.getElementById('pnl_'+this.panels[c].id).classList.remove("extra_color");
+          document.getElementById(this.panels[c].id).classList.remove("extra_border");
+        }
+      }
+    },
+
+  },
+
+  mounted() {
+
+  },
   async beforeCreate() {
-    // await this.$store.dispatch("getProjects")
+    await this.$store.dispatch("getProjects").then( res => {
+      console.log(res);
+      if(res) {
+
+        let proj = [];
+        res.forEach(element => {
+          proj.push({
+            name: element.name,
+            langUrl: element.languages_url,
+            url: element.url,
+            created_at: element.created_at
+          })
+        });
+
+        this.projects = proj;
+
+        if(proj.length) {
+          this.$store.dispatch("getProjectTags", proj)
+        }
+      }
+
+    })
   }
 }
 </script>

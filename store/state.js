@@ -167,33 +167,19 @@ export default () => ({
           icon: "folder",
           contents: [
             {
-              title: "Graphic Designs", 
+              title: "Github", 
               sub: "",
-              link: "https://github.com",
-              note: "Graphic designs from previous works",
+              link: "https://github.com/kharylkate?tab=repositories",
+              note: "Github Repositories",
               cont: []
             },
             {
-              title: "Digital Arts", 
+              title: "Dribbble", 
               sub: "",
-              link: "https://github.com",
-              note: "Using Huion pentab and Adobe Photoshop",
+              link: "https://dribbble.com/Syllver",
+              note: "Dribbble Visual Designs",
               cont: []
             },
-            {
-              title: "Portraits", 
-              sub: "",
-              link: "https://github.com",
-              note: "Colored and Graphite pencils, and Vellum paper",
-              cont: []
-            },
-            {
-              title: "Website Designs", 
-              sub: "",
-              link: "https://github.com",
-              note: "Web Design",
-              cont: []
-            }
           ]
         },
       ],
